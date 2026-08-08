@@ -1,0 +1,51 @@
+REFLECTION: MICROSOFT COPILOT PROMPTING APPROACH
+
+I wrote a single Copilot prompt for the MindBridge Course Enrollment feature
+that requested two separate deliverables in one response. The first was a set
+of five BDD-format test cases written in Given/When/Then structure, covering
+positive, negative, and data-format scenarios for enrollment. The second was a
+10-row synthetic CSV dataset of enrollment records to be used as test data. I
+pasted the Course Enrollment user story and its four acceptance criteria into
+the prompt as context, so that both deliverables were generated against the
+actual requirement rather than a generic enrollment scenario.
+
+Four deliberate design choices in the prompt, and what each one changed about
+the output:
+
+1. Naming the BDD structure explicitly.
+   Rather than asking for "test cases," I specified strict Gherkin with Given,
+   When, and Then on separate lines, and required every Then step to state a
+   single observable outcome. This is what produced properly structured
+   scenarios instead of a generic step-and-expected-result table, and it kept
+   the assertions checkable — a named confirmation message or validation
+   message — rather than vague statements like "the system behaves correctly."
+
+2. Listing the CSV column headers verbatim.
+   I wrote the header row into the prompt exactly as required:
+   UserID,FirstName,CourseID,DateOfBirth,ExpectedResult. Copilot returned those
+   five headers, spelled and ordered correctly, so the dataset was importable
+   without renaming. Left to its own judgement it substitutes plausible
+   equivalents such as StudentID, Name, and DOB, which would not line up with
+   the target schema.
+
+3. Stating exact counts.
+   I asked for exactly five test cases and exactly ten data rows rather than
+   "some" or "several." This mattered because both numbers are hard acceptance
+   criteria on the Jira tasks, and an unspecified count typically returns three
+   or four cases — enough to look complete while failing the requirement.
+
+4. Requiring a mix of valid and invalid data, and mixed date formats.
+   I required rows that should succeed and rows that should fail, constrained
+   ExpectedResult to Pass or Fail, and asked for date of birth in a deliberate
+   mixture of ISO (YYYY-MM-DD) and alternate numeric formats such as MM/DD/YYYY
+   and DD-MM-YYYY, including at least one date ambiguous between US and
+   European conventions. This produced a dataset that exercises the validation
+   paths in acceptance criteria 3 and 4 instead of ten clean happy-path rows,
+   and the mixed date formats gave direct coverage of the enrollment
+   date-handling behaviour under investigation.
+
+Taken together, the specificity of the prompt is what determined whether the
+output was usable as-is. The elements that constrained structure and naming
+controlled the correctness of the artifacts, while the elements that
+constrained coverage and data variety controlled whether the test cases were
+meaningful against the Course Enrollment requirement.
