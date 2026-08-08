@@ -1,0 +1,23 @@
+Summary,Description,Issue Type,Component,Date Created,Date Resolved,Status,Resolution,Comment,Comment,Comment,Comment,Comment
+"MB-141 - Enrollment Report Fails to Load for Blank Instructor ID","ORIGINAL REPORT (as filed by QA on 2026-05-04):
+Opened the enrollment report in Admin and nothing loaded.
+
+--- TICKET FACTS ---
+Component: Admin Reporting
+Created: 2026-05-04
+Resolved: 2026-05-18
+MTTR: ~14 days
+Reopen count: 2
+Eventual fix: a single input validation check on the Instructor ID field.
+
+--- STATUS HISTORY (audit log) ---
+2026-05-04 09:12 | QA | Created (To Do)
+2026-05-05 10:30 | Developer | To Do -> In Progress
+2026-05-05 15:45 | Developer | In Progress -> Done | Resolution: Cannot Reproduce
+2026-05-06 09:05 | QA | Done -> In Progress (REOPENED #1)
+2026-05-08 14:20 | Developer | In Progress -> Done | Resolution: Cannot Reproduce
+2026-05-11 11:10 | QA | Done -> In Progress (REOPENED #2)
+2026-05-13 16:40 | Developer | In Progress -> Done | Resolution: Fixed
+2026-05-18 10:00 | QA | Done -> Closed | Resolution: Fixed
+
+Note: Jira cannot replay past status transitions on import, so this audit log is embedded here (and printed in RCA_Template.txt) for you to read.",Bug,Admin Reporting,04/May/26 9:12 AM,18/May/26 10:00 AM,Done,Fixed,"[Comment 1 - Developer, 2026-05-05, set to Cannot Reproduce] I opened the Enrollment Report in Admin and it loaded fine for me. I cannot reproduce this. What browser and OS are you on? What were the exact steps and filters you used? Can you send me a screenshot of the browser console?","[Comment 2 - QA, 2026-05-06, reopened] I'm on Chrome. I just opened the Enrollment Report in Admin and it wouldn't load. It shouldn't be this hard to reproduce.","[Comment 3 - Developer, 2026-05-08, set to Cannot Reproduce] Still cannot get it to fail. I need the exact fields and values you used - which course, which filters, what was in the Instructor ID field? Is there an error in the browser console when the report fails to load? A screenshot of the whole page with the console open would help a lot.","[Comment 4 - QA, 2026-05-11, reopened] Sorry. Here are the exact steps: 1. Sign in as admin and open Admin -> Enrollment Report. 2. Clear the Instructor ID filter field so it is blank. 3. Select Run Report. The report fails to load. Environment: Chrome 125 on Windows 11. Attached: console_error.png - the browser console shows TypeError: Cannot read properties of null (reading 'id').","[Comment 5 - Developer, 2026-05-13, set to Fixed] Got it - it throws a null error when the Instructor ID field is left blank. I can add the input validation now. Thanks!"

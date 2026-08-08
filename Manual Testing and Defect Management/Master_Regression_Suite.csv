@@ -1,0 +1,51 @@
+Test ID,Area,Title,Priority
+TC-001,Authentication,Valid Login—Standard Credentials,High
+TC-002,Authentication,"Login—New Password Validation (12+ Characters, Special Character)",High
+TC-003,Authentication,Login—Rejection of Password Below 12 Characters,High
+TC-004,Authentication,Login—Rejection of Password Without Special Character,High
+TC-005,Authentication,Logout—Session Termination,High
+TC-006,Course Catalogue & Search,Basic Search—Single Keyword Query,High
+TC-007,Course Catalogue & Search,Advanced Search—Query With More Than Three Keywords,High
+TC-008,Course Catalogue & Search,Search—No Results Returned for Unrecognized Query,High
+TC-009,Course Catalogue & Search,Search Results—Correct Course Listed for Exact Title Match,High
+TC-010,Authentication,Password Reset Flow—End to End,Medium
+TC-011,Authentication,Session Timeout After Inactivity,Medium
+TC-012,Authentication,Remember Me Persists Session Across Browser Restart,Low
+TC-013,Course Catalogue & Search,Browse Catalog—All Courses Display,Medium
+TC-014,Course Catalogue & Search,Filter by Category Returns Correct Subset,Medium
+TC-015,Course Catalogue & Search,Sort by Price Ascending,Medium
+TC-016,Course Catalogue & Search,Sort by Price Descending,Medium
+TC-017,Course Catalogue & Search,Course Detail—Full Description and Pricing Display,Medium
+TC-018,Course Catalogue & Search,Pagination—Navigate to Next Page of Results,Low
+TC-019,Course Catalogue & Search,Search—Special Characters Handled Gracefully,Low
+TC-020,Enrollment & Cart,Add Single Course to Enrollment List,High
+TC-021,Enrollment & Cart,Remove Course from Enrollment List,Medium
+TC-022,Enrollment & Cart,Add Multiple Courses to List,Medium
+TC-023,Enrollment & Cart,Empty Cart State Displays Correct Message,Low
+TC-024,Enrollment & Cart,Duplicate Add Shows Appropriate Feedback,Medium
+TC-025,Checkout & Payment,Proceed to Checkout From Cart,High
+TC-026,Checkout & Payment,Mock Card Payment—Successful Transaction,High
+TC-027,Checkout & Payment,Invalid Card Number Rejected,High
+TC-028,Checkout & Payment,Expired Card Rejected,Medium
+TC-029,Checkout & Payment,Checkout Summary Reflects Cart Items,Medium
+TC-030,Checkout & Payment,Payment Confirmation Page Displays,High
+TC-031,Dashboard,Dashboard Loads With User Greeting,High
+TC-032,Dashboard,Recent Activity Shows Enrollment Entries,High
+TC-033,Dashboard,Recent Activity Shows Payment Entries,High
+TC-034,Dashboard,Enrolled Courses List Displays Correct Courses,High
+TC-035,Dashboard,Grades Section Shows Course Grades,Medium
+TC-036,Profile & Account,View Profile Information,Medium
+TC-037,Profile & Account,Update Display Name,Medium
+TC-038,Profile & Account,Change Password With Valid Current Password,Medium
+TC-039,Profile & Account,Email Field Read-Only for Standard Users,Low
+TC-040,Profile & Account,Notification Preferences Save Successfully,Low
+TC-041,Admin,Admin Login With Seeded Credentials,High
+TC-042,Admin,Admin Dashboard Loads Course Management,High
+TC-043,Admin,Create New Course Entry,Medium
+TC-044,Admin,Edit Existing Course Details,Medium
+TC-045,Admin,Deactivate Course Removes From Catalog,Medium
+TC-046,Admin,View User Enrollment Report,Medium
+TC-047,Admin,Export Enrollment Data CSV,Low
+TC-048,Admin,Search Users by Email in Admin Panel,Low
+TC-049,Admin,Admin Cannot Access Student-Only Routes Without Role,High
+TC-050,Admin,Audit Log Records Admin Actions,Low

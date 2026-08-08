@@ -1,0 +1,96 @@
+=====================================================================
+ROOT CAUSE ANALYSIS (RCA) - TICKET MB-141
+Enrollment Report Fails to Load for Blank Instructor ID
+=====================================================================
+
+Write your RCA as a single focused paragraph - or two short
+paragraphs, one per question. Aim for four to six sentences total.
+
+---------------------------------------------------------------------
+QUESTION 1: Why did the MTTR and Reopen Rate spike?
+Be specific about the communication failures - name the missing
+information and explain how each gap caused a delay.
+---------------------------------------------------------------------
+
+[Write your answer here]
+
+
+
+---------------------------------------------------------------------
+QUESTION 2: What will you do differently next time?
+Propose at least two concrete, repeatable actions you will take
+before submitting a bug report in the future.
+---------------------------------------------------------------------
+
+[Write your answer here]
+
+
+
+=====================================================================
+REFERENCE: TICKET MB-141 - FULL HISTORY
+Use this section if the comment thread did not import into Jira.
+=====================================================================
+
+TICKET HEADER
+  Title:        Enrollment Report Fails to Load for Blank Instructor ID
+  Component:    Admin Reporting
+  Reporter:     You (QA)
+  Assignee:     The Developer
+  Created:      2026-05-04
+  Resolved:     2026-05-18
+  MTTR:         ~14 days
+  Reopen count: 2
+  Eventual fix: A single input validation check on the Instructor ID field
+
+ORIGINAL DESCRIPTION (as filed):
+  "Opened the enrollment report in Admin and nothing loaded."
+
+STATUS HISTORY (audit log)
+  2026-05-04 09:12 | You (QA)      | Created (To Do)
+  2026-05-05 10:30 | The Developer | To Do -> In Progress
+  2026-05-05 15:45 | The Developer | In Progress -> Done      | Cannot Reproduce
+  2026-05-06 09:05 | You (QA)      | Done -> In Progress      | REOPENED #1
+  2026-05-08 14:20 | The Developer | In Progress -> Done      | Cannot Reproduce
+  2026-05-11 11:10 | You (QA)      | Done -> In Progress      | REOPENED #2
+  2026-05-13 16:40 | The Developer | In Progress -> Done      | Fixed
+  2026-05-18 10:00 | You (QA)      | Done -> Closed           | Fixed
+
+COMMENT THREAD
+
+Comment 1 - The Developer (2026-05-05, set to Cannot Reproduce)
+  "I opened the Enrollment Report in Admin and it loaded fine for me.
+  I cannot reproduce this. What browser and OS are you on? What were
+  the exact steps and filters you used? Can you send me a screenshot
+  of the browser console?"
+  (Ticket sent back to QA)
+
+Comment 2 - You (QA) (2026-05-06, reopened)
+  "I'm on Chrome. I just opened the Enrollment Report in Admin and it
+  wouldn't load. It shouldn't be this hard to reproduce."
+  (Ticket sent back to the Developer)
+
+Comment 3 - The Developer (2026-05-08, set to Cannot Reproduce)
+  "Still cannot get it to fail. I need the exact fields and values you
+  used - which course, which filters, what was in the Instructor ID
+  field? Is there an error in the browser console when the report
+  fails to load? A screenshot of the whole page with the console open
+  would help a lot."
+  (Ticket sent back to QA for the second time)
+
+Comment 4 - You (QA) (2026-05-11, reopened)
+  "Sorry. Here are the exact steps:
+   1. Sign in as admin and open Admin -> Enrollment Report.
+   2. Clear the Instructor ID filter field so it is blank.
+   3. Select Run Report. The report fails to load.
+   Environment: Chrome 125 on Windows 11.
+   Attached: console_error.png - the browser console shows
+   TypeError: Cannot read properties of null (reading 'id')."
+  (Ticket sent back to the Developer)
+
+Comment 5 - The Developer (2026-05-13, set to Fixed)
+  "Got it - it throws a null error when the Instructor ID field is
+  left blank. I can add the input validation now. Thanks!"
+
+=====================================================================
+END OF FILE
+=====================================================================

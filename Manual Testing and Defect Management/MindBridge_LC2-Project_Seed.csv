@@ -1,0 +1,6 @@
+Summary,Description,Issue Type,Priority,Labels,Comment
+"Checkout is broken","Tried to buy a course and the checkout didn't work right. Please fix.
+
+--- TICKET STATE (for this exercise) ---
+Status: Rejected by the developer as CANNOT REPRODUCE (see developer comment).
+Your job: audit this ticket, add the missing details that make it reproducible, and transition it to In Progress.",Bug,,cannot-reproduce,"[Developer - rejection note] Cannot Reproduce. I went through checkout on my machine and the order completed normally. This report does not give me anything to work with: which page were you on, what did you enter in the payment fields, what browser and OS are you using, and what actually happened (error message, blank page, double charge)? Sending this back to QA until the report has reproducible steps."
