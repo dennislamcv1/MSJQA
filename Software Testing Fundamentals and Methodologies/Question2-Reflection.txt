@@ -1,0 +1,28 @@
+QUESTION 2 - REFLECTION
+MindBridge: QA Strategy and Execution Document
+Dennis | 07 August 2026
+
+-------------------------------------------------------------------------------
+In 3-5 sentences, describe one decision you made during the lab that improved
+the quality of your QA Strategy document. Explain what you decided, why you
+made that choice, and what a weaker version of that decision would have looked
+like.
+-------------------------------------------------------------------------------
+
+The decision that most improved the document was to run a static ambiguity
+review of story MB-142 before writing a single test case, rather than treating
+the seeded story as a finished specification. The story said only that the app
+"should give them a link", which left link expiry, viewer permissions,
+revocation and repeat-request behaviour entirely undefined, so I walked it
+through with the product owner and dev lead and converted each gap into an
+explicit, testable acceptance criterion. That choice is what allowed Section 3
+to contain a genuine edge case and a genuine error condition instead of three
+variations on the happy path, and Scenario 2 - a second share request for a
+dashboard that already holds an active link - is precisely the path that
+exposed the HTTP 500 defect logged as MB-DEF-001 in Section 4. A weaker version
+of the same decision would have been to accept the story as written and begin
+executing straight away, which would have produced one happy-path check that
+passes, an empty defect log, and a false signal that the feature was ready to
+ship. The review cost roughly forty minutes and moved defect discovery from
+production back into the sprint, which is the entire economic argument for
+static testing.

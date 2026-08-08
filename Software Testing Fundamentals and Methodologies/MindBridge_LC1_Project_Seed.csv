@@ -1,0 +1,3 @@
+Issue Type,Summary,Description,Epic Name
+Epic,"Dashboard Sharing & Export","Umbrella epic for the new MindBridge dashboard sharing capability. Learners, instructors, and administrators should be able to share a snapshot of their dashboard with other people.","Dashboard Sharing & Export"
+Story,"As a learner, I want to share my dashboard with others so they can see it","We are adding a Generate share link button to the student dashboard. When the learner uses it, the app should give them a link they can send to someone else. Marketing wants this out this sprint.",
